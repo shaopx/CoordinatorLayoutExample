@@ -42,6 +42,7 @@ public class MainActivity extends Activity {
     private void initSampleItems() {
         items.add(new SampleItem("谷歌示例", ScrollingActivity.class));
         items.add(new SampleItem("即刻话题详情页", JiKeTopicDetailActivity.class));
+        items.add(new SampleItem("自定义一个类似CoordinatorLayout的布局", CustomMyCoorLayoutActivity.class));
     }
 
     private class SampleItem {

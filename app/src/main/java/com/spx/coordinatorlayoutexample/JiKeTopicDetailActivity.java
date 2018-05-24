@@ -15,14 +15,10 @@ import com.spx.coordinatorlayoutexample.util.VUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JiKeTopicDetailActivity extends FragmentActivity {
+public class JiKeTopicDetailActivity extends BaseActivity {
 
     private static final String TAG = "JiKeTopicDetail";
-    List<Fragment> mFragments = new ArrayList<>();
 
-    String[] mTitles = new String[]{
-            "精选", "广场"
-    };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,13 +26,7 @@ public class JiKeTopicDetailActivity extends FragmentActivity {
 
         setContentView(R.layout.jike_topic_detail_layout);
 
-        handleStatusBar();
 
-
-        for (int i = 0; i < mTitles.length; i++) {
-            ListFragment listFragment = ListFragment.newInstance(mTitles[i]);
-            mFragments.add(listFragment);
-        }
 
         BaseFragmentAdapter adapter =
                 new BaseFragmentAdapter(getSupportFragmentManager(), mFragments, mTitles);
@@ -66,14 +56,5 @@ public class JiKeTopicDetailActivity extends FragmentActivity {
         });
     }
 
-    // 统一处理透明状态栏, 目前只有首页在用
-    protected void handleStatusBar(){
-        View statusBarHolderView = findViewById(R.id.statusbar_holder);
-        if (statusBarHolderView!=null ) {
-            statusBarHolderView.setVisibility(View.VISIBLE);
-            ViewGroup.LayoutParams layoutParams = statusBarHolderView.getLayoutParams();
-            layoutParams.height = VUtil.getStatusBarHeight(this);
-            statusBarHolderView.setLayoutParams(layoutParams);
-        }
-    }
+
 }
