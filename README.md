@@ -1,6 +1,11 @@
 # CoordinatorLayoutExample
 学习CoordinatorLayout, NestedScrollingParent和 NestedScrollingChild时整理的一些示例
 
+# 博文整理 
+## 目前个人感觉讲的最深入浅出的几篇
+https://www.jianshu.com/p/f09762df81a5
+https://www.cnblogs.com/wjtaigwh/p/6398562.html
+
 # 目前包括了谷歌的示例, 
 
 ## ScrollingActivity
