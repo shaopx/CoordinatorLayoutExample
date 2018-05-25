@@ -1,5 +1,5 @@
 # CoordinatorLayoutExample
-学习CoordinatorLayout时的一些例子
+学习CoordinatorLayout, NestedScrollingParent和 NestedScrollingChild时整理的一些示例
 
 # 目前包括了谷歌的示例, 
 
