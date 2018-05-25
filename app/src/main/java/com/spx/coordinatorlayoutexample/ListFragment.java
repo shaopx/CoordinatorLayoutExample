@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.spx.coordinatorlayoutexample.adapter.SampleAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,38 +47,38 @@ public class ListFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        recyclerView.setAdapter(new SampleAdapter());
+        recyclerView.setAdapter(new SampleAdapter(data));
 
         return view;
     }
 
-    private class SimpleViewHolder extends RecyclerView.ViewHolder {
-        public TextView titleTv;
-
-        public SimpleViewHolder(View itemView) {
-            super(itemView);
-            titleTv = itemView.findViewById(R.id.title_tv);
-        }
-    }
-
-    private class SampleAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
-
-        @NonNull
-        @Override
-        public SimpleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(context).inflate(R.layout.sample_item_layout, parent, false);
-            return new SimpleViewHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull SimpleViewHolder holder, int position) {
-            final String item = data.get(position);
-            holder.titleTv.setText(item);
-        }
-
-        @Override
-        public int getItemCount() {
-            return data.size();
-        }
-    }
+//    private class SimpleViewHolder extends RecyclerView.ViewHolder {
+//        public TextView titleTv;
+//
+//        public SimpleViewHolder(View itemView) {
+//            super(itemView);
+//            titleTv = itemView.findViewById(R.id.title_tv);
+//        }
+//    }
+//
+//    private class SampleAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
+//
+//        @NonNull
+//        @Override
+//        public SimpleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//            View view = LayoutInflater.from(context).inflate(R.layout.sample_item_layout, parent, false);
+//            return new SimpleViewHolder(view);
+//        }
+//
+//        @Override
+//        public void onBindViewHolder(@NonNull SimpleViewHolder holder, int position) {
+//            final String item = data.get(position);
+//            holder.titleTv.setText(item);
+//        }
+//
+//        @Override
+//        public int getItemCount() {
+//            return data.size();
+//        }
+//    }
 }

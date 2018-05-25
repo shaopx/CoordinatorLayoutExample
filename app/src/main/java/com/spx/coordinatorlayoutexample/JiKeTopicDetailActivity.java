@@ -4,16 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.ViewGroup;
 
-import com.spx.coordinatorlayoutexample.util.VUtil;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.spx.coordinatorlayoutexample.adapter.BaseFragmentAdapter;
 
 public class JiKeTopicDetailActivity extends BaseActivity {
 

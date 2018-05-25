@@ -1,10 +1,11 @@
 package com.spx.coordinatorlayoutexample;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+
+import com.spx.coordinatorlayoutexample.adapter.BaseFragmentAdapter;
 
 public class CustomMyCoorLayoutActivity extends BaseActivity {
 

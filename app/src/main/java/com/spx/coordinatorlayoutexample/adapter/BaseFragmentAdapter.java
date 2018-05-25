@@ -1,4 +1,4 @@
-package com.spx.coordinatorlayoutexample;
+package com.spx.coordinatorlayoutexample.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
