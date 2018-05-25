@@ -1,4 +1,4 @@
-# CoordinatorLayoutExample
+# 说明
 学习CoordinatorLayout, NestedScrollingParent和 NestedScrollingChild时整理的一些示例
 
 # 博文整理 
@@ -6,7 +6,7 @@
 https://www.jianshu.com/p/f09762df81a5  
 https://www.cnblogs.com/wjtaigwh/p/6398562.html  
 
-# 目前包括了谷歌的示例, 
+# 示例说明
 
 ## ScrollingActivity
 谷歌官方的示例代码, 每次新建工程时都可以选中的那个嵌套滑动模板代码 
