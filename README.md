@@ -6,9 +6,9 @@ https://www.jianshu.com/p/f09762df81a5
 https://www.cnblogs.com/wjtaigwh/p/6398562.html  
 
 # 学习记录
-## 为什么appbarlayout可以在手触摸拖动的时候上滑?  它没有监听下面的recyclerView, 也没有onIntercepteTouchEvent() onTouchEvent()方法.  答案在这两个博文里:  
-https://blog.csdn.net/litefish/article/details/52588235
-https://www.jianshu.com/p/99adaad8d55c
+## 为什么appbarlayout可以在手触摸拖动的时候上滑?  它没有监听下面的recyclerView, 也没有onIntercepteTouchEvent() onTouchEvent()方法.  答案在这两个博文里:
+https://blog.csdn.net/litefish/article/details/52588235  
+https://www.jianshu.com/p/99adaad8d55c  
 
 # 示例说明
 
