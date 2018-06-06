@@ -20,6 +20,8 @@ https://www.jianshu.com/p/99adaad8d55c
 (CoordinatorLayout和AppBarLayout 嵌套滑动时抖动的一个原生bug)  https://www.jianshu.com/p/367c0f251445 
  ### 知识点二  
  解决了谷歌官方模板中存在的recyclerview滑动到边界之后, idle事件不能及时接收的问题
+ bug位置: https://issuetracker.google.com/issues/66996774
+ 里面也附带了chrisbanes的解决方法. 
 
 ## CustomNestedScrolling  和 CustomFoldingScrolling
 从https://github.com/543441727/MyNestedScrolling中复制过来的
