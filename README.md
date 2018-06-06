@@ -15,6 +15,12 @@ https://www.jianshu.com/p/99adaad8d55c
 ## ScrollingActivity
 谷歌官方的示例代码, 每次新建工程时都可以选中的那个嵌套滑动模板代码 
 
+ ### 问题一 
+ 解决了谷歌官方模板中存在的appbarlayout抖动的问题. 具体问题描述请见下面博文:  
+(CoordinatorLayout和AppBarLayout 嵌套滑动时抖动的一个原生bug)  https://www.jianshu.com/p/367c0f251445 
+ ### 问题二  
+ 解决了谷歌官方模板中存在的recyclerview滑动到边界之后, idle事件不能及时接收的问题
+
 ## CustomNestedScrolling  和 CustomFoldingScrolling
 从https://github.com/543441727/MyNestedScrolling中复制过来的
 博文: https://www.cnblogs.com/wjtaigwh/p/6398562.html
