@@ -41,10 +41,11 @@ public class MainActivity extends Activity {
 
     private void initSampleItems() {
         items.add(new SampleItem("谷歌示例", ScrollingActivity.class));
-        items.add(new SampleItem("即刻话题详情页", JiKeTopicDetailActivity.class));
         items.add(new SampleItem("自定义NestedScrollingParent和NestedScrollingChild", CustomNestedScrolling.class));
         items.add(new SampleItem("自定义NestedScrollingParent实现折叠嵌套滑动效果", CustomFoldingScrolling.class));
         items.add(new SampleItem("自定义一个类似CoordinatorLayout的布局", CustomMyCoorLayoutActivity.class));
+
+        items.add(new SampleItem("即刻话题详情页", JiKeTopicDetailActivity.class));
     }
 
     private class SampleItem {
