@@ -32,6 +32,8 @@
             android:name=".CustomNestedScrolling" ></activity>
         <activity
             android:name=".CustomFoldingScrolling" ></activity>
+        <activity
+            android:name=".BottomSheetBehaviorDouYinListActivity" ></activity>
     </application>
 
 </manifest>

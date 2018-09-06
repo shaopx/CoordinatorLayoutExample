@@ -46,6 +46,7 @@ public class MainActivity extends Activity {
         items.add(new SampleItem("自定义一个类似CoordinatorLayout的布局", CustomMyCoorLayoutActivity.class));
 
         items.add(new SampleItem("即刻话题详情页", JiKeTopicDetailActivity.class));
+        items.add(new SampleItem("BottomSheetBehavior仿写抖音评论列表效果", BottomSheetBehaviorDouYinListActivity.class));
     }
 
     private class SampleItem {

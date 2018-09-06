@@ -1,0 +1,48 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="评论列表" />
+
+    </RelativeLayout>
+
+    <!--如果你用的不是androidx版本, 那么app:layout_behavior中设置的值就对应的要更换为design库中的类名-->
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="348dp"
+        android:orientation="vertical"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+        <TextView
+            android:id="@+id/list_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#3300ff00"
+            android:gravity="center"
+            android:text="这个是标题,可以拖住滑动" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

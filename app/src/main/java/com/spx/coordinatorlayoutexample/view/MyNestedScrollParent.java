@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.v4.view.NestedScrollingParent;
 import android.support.v4.view.NestedScrollingParentHelper;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -15,6 +16,7 @@ import android.widget.TextView;
  * copy from https://github.com/543441727/MyNestedScrolling
  */
 public class MyNestedScrollParent extends LinearLayout implements NestedScrollingParent {
+    private static final String TAG = "MyNestedScrollParent";
     private ImageView img;
     private TextView tv;
     private MyNestedScrollChild myNestedScrollChild;
@@ -84,6 +86,7 @@ public class MyNestedScrollParent extends LinearLayout implements NestedScrollin
     //前3个为输入参数，最后一个是输出参数
     @Override
     public void onNestedPreScroll(View target, int dx, int dy, int[] consumed) {
+        Log.d(TAG, "onNestedPreScroll: ...dy:"+dy);
         if (showImg(dy) || hideImg(dy)) {//如果需要显示或隐藏图片，即需要自己(parent)滚动
             scrollBy(0, -dy);//滚动
             consumed[1] = dy;//告诉child我消费了多少

@@ -52,33 +52,4 @@ public class ListFragment extends Fragment {
         return view;
     }
 
-//    private class SimpleViewHolder extends RecyclerView.ViewHolder {
-//        public TextView titleTv;
-//
-//        public SimpleViewHolder(View itemView) {
-//            super(itemView);
-//            titleTv = itemView.findViewById(R.id.title_tv);
-//        }
-//    }
-//
-//    private class SampleAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
-//
-//        @NonNull
-//        @Override
-//        public SimpleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//            View view = LayoutInflater.from(context).inflate(R.layout.sample_item_layout, parent, false);
-//            return new SimpleViewHolder(view);
-//        }
-//
-//        @Override
-//        public void onBindViewHolder(@NonNull SimpleViewHolder holder, int position) {
-//            final String item = data.get(position);
-//            holder.titleTv.setText(item);
-//        }
-//
-//        @Override
-//        public int getItemCount() {
-//            return data.size();
-//        }
-//    }
 }
