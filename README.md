@@ -35,4 +35,5 @@ https://www.jianshu.com/p/99adaad8d55c
 ## JiKeTopicDetailActivity
 仿照即刻话题详情页的一份示例   基本的框架和功能都有.  
 
-
+## BottomSheetBehaviorDouYinListActivity  
+使用BottomSheetBehavior+ CoordinatorLayout 仿写了抖音评论列表效果, 难点在滑动效果上, 只有recyclerView滑到顶部之后继续下滑才会收起整个列表区域: 具体效果可以参看:  https://www.jianshu.com/p/1cee88ea0e35
