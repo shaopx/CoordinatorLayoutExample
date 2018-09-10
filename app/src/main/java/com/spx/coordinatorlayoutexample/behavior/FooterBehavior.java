@@ -1,6 +1,5 @@
 package com.spx.coordinatorlayoutexample.behavior;
 
-import android.animation.Animator;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -8,6 +7,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -15,9 +16,9 @@ import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
 
 /**
- *
+ * 向上滑动则隐藏底部view, 如果滑到底部, 则又显示
+ * 如果向下滑动则显示
  */
-
 public class FooterBehavior extends CoordinatorLayout.Behavior<View> {
 
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
@@ -58,12 +59,11 @@ public class FooterBehavior extends CoordinatorLayout.Behavior<View> {
     }
 
 
-    //2.根据滑动的距离显示和隐藏footer view
+    //向上滑动则隐藏,  如果滑动到底部则显示
     @Override
     public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, View child,
                                   View target, int dx, int dy, int[] consumed, int type) {
         float translationY = child.getTranslationY();
-        Log.d(TAG, "onNestedPreScroll: ...dy:" + dy + ", translationY:" + translationY);
 
         clearMsg();
 
@@ -80,14 +80,14 @@ public class FooterBehavior extends CoordinatorLayout.Behavior<View> {
         }
     }
 
+
     @Override
     public void onStopNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View target, int type) {
         super.onStopNestedScroll(coordinatorLayout, child, target, type);
-        Log.d(TAG, "onStopNestedScroll: ...");
 
         clearMsg();
 
-        if (child.getTranslationY() < child.getHeight() / 2f) {
+        if (child.getTranslationY() < child.getHeight() / 2f || atBottom(target)) {
             Message msg = Message.obtain();
             msg.what = MSG_SHOW;
             msg.obj = child;
@@ -100,13 +100,25 @@ public class FooterBehavior extends CoordinatorLayout.Behavior<View> {
         }
     }
 
-//    @Override
-//    public boolean onNestedPreFling(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View target, float velocityX, float velocityY) {
-//        Log.d(TAG, "onNestedPreFling: ...");
-//        handler.removeMessages(MSG_SHOW);
-//        handler.removeMessages(MSG_HIDE);
-//        return super.onNestedPreFling(coordinatorLayout, child, target, velocityX, velocityY);
-//    }
+    private boolean atBottom(View target) {
+        Log.d(TAG, "atBottom: target" + target);
+        if (target instanceof NestedScrollView) {
+            NestedScrollView nestedScrollView = (NestedScrollView) target;
+            int scrollY = nestedScrollView.getScrollY();
+            View onlyChild = nestedScrollView.getChildAt(0);
+            if (onlyChild.getHeight() <= scrollY + nestedScrollView.getHeight()) {
+                return true;
+            }
+        } else if (target instanceof RecyclerView) {
+            RecyclerView recyclerView = (RecyclerView) target;
+            if (recyclerView.computeVerticalScrollExtent() + recyclerView.computeVerticalScrollOffset()
+                    >= recyclerView.computeVerticalScrollRange()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     private void clearMsg() {
         handler.removeMessages(MSG_SHOW);
