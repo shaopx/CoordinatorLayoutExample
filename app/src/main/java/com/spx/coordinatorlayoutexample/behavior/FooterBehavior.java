@@ -10,7 +10,6 @@ import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
@@ -18,6 +17,7 @@ import android.view.animation.Interpolator;
 /**
  * 向上滑动则隐藏底部view, 如果滑到底部, 则又显示
  * 如果向下滑动则显示
+ * 目前仅支持recyclerview, 和NestedScrollView
  */
 public class FooterBehavior extends CoordinatorLayout.Behavior<View> {
 
@@ -52,6 +52,9 @@ public class FooterBehavior extends CoordinatorLayout.Behavior<View> {
     public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, View child,
                                        View directTargetChild, View target, int nestedScrollAxes, int type) {
         if ((nestedScrollAxes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0) {
+            if (reachBottom(target)) {
+                return false;
+            }
             clearMsg();
             return true;
         }
@@ -84,10 +87,9 @@ public class FooterBehavior extends CoordinatorLayout.Behavior<View> {
     @Override
     public void onStopNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View target, int type) {
         super.onStopNestedScroll(coordinatorLayout, child, target, type);
-
         clearMsg();
 
-        if (child.getTranslationY() < child.getHeight() / 2f || atBottom(target)) {
+        if (child.getTranslationY() < child.getHeight() / 2f || reachBottom(target)) {
             Message msg = Message.obtain();
             msg.what = MSG_SHOW;
             msg.obj = child;
@@ -100,8 +102,7 @@ public class FooterBehavior extends CoordinatorLayout.Behavior<View> {
         }
     }
 
-    private boolean atBottom(View target) {
-        Log.d(TAG, "atBottom: target" + target);
+    private boolean reachBottom(View target) {
         if (target instanceof NestedScrollView) {
             NestedScrollView nestedScrollView = (NestedScrollView) target;
             int scrollY = nestedScrollView.getScrollY();
