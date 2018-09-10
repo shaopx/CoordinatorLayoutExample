@@ -34,6 +34,8 @@
             android:name=".CustomFoldingScrolling" ></activity>
         <activity
             android:name=".BottomSheetBehaviorDouYinListActivity" ></activity>
+        <activity
+            android:name=".AppBarAndBottomHideWhenScrollingActivity" ></activity>
     </application>
 
 </manifest>

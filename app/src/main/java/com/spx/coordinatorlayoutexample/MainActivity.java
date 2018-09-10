@@ -47,6 +47,7 @@ public class MainActivity extends Activity {
 
         items.add(new SampleItem("即刻话题详情页", JiKeTopicDetailActivity.class));
         items.add(new SampleItem("BottomSheetBehavior仿写抖音评论列表效果", BottomSheetBehaviorDouYinListActivity.class));
+        items.add(new SampleItem("toolbar和底部tab都随滑动消失和显示", AppBarAndBottomHideWhenScrollingActivity.class));
     }
 
     private class SampleItem {
