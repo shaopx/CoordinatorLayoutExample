@@ -39,6 +39,5 @@ https://www.jianshu.com/p/99adaad8d55c
 使用BottomSheetBehavior+ CoordinatorLayout 仿写了抖音评论列表效果, 难点在滑动效果上, 只有recyclerView滑到顶部之后继续下滑才会收起整个列表区域: 具体效果可以参看:  https://www.jianshu.com/p/1cee88ea0e35
 
 ## AppBarAndBottomHideWhenScrollingActivity
-向上滑动则隐藏底部view, 如果滑到底部, 则又显示
-如果向下滑动则显示
+向上滑动则隐藏底部view, 如果滑到底部, 则又显示; 如果向下滑动则显示;
 目前仅支持recyclerview, 和NestedScrollView
