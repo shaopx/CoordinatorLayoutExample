@@ -1,7 +1,7 @@
 package com.spx.coordinatorlayoutexample;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 /**
  * 这个示例是从
